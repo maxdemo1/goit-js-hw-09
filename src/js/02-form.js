@@ -2,7 +2,6 @@ const feedbackForm = document.querySelector('.feedback-form');
 const formInput = feedbackForm.elements.email;
 const formMessage = feedbackForm.elements.message;
 const localStorageKey = 'feedback-form-state';
-const inputValues = {};
 
 function formCurrentData(typeOfData) {
   if (
@@ -26,6 +25,8 @@ formInput.value = formCurrentData('email');
 formMessage.value = formCurrentData('message');
 
 feedbackForm.addEventListener('input', evt => {
+  const inputValues = JSON.parse(localStorage.getItem(localStorageKey));
+
   inputValues[evt.target.name] = evt.target.value.trim();
   localStorage.setItem(localStorageKey, JSON.stringify(inputValues));
 });
