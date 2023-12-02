@@ -25,10 +25,16 @@ formInput.value = formCurrentData('email');
 formMessage.value = formCurrentData('message');
 
 feedbackForm.addEventListener('input', evt => {
-  const inputValues = JSON.parse(localStorage.getItem(localStorageKey));
-
-  inputValues[evt.target.name] = evt.target.value.trim();
-  localStorage.setItem(localStorageKey, JSON.stringify(inputValues));
+  if (localStorage.getItem(localStorageKey) == null) {
+    let inputValues = {};
+    // inputValues = JSON.parse(localStorage.getItem(localStorageKey));
+    inputValues[evt.target.name] = evt.target.value.trim();
+    localStorage.setItem(localStorageKey, JSON.stringify(inputValues));
+  } else {
+    let inputValues = JSON.parse(localStorage.getItem(localStorageKey));
+    inputValues[evt.target.name] = evt.target.value.trim();
+    localStorage.setItem(localStorageKey, JSON.stringify(inputValues));
+  }
 });
 
 feedbackForm.addEventListener('submit', event => {
