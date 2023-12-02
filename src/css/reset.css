@@ -50,6 +50,7 @@ ul {
 a {
   color: currentColor;
   text-decoration: none;
+  background-color: inherit;
 }
 
 button {
