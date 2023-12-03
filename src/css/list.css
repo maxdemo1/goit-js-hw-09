@@ -20,5 +20,5 @@
 
 .link-list li a:hover,
 .link-list li a:focus {
-    transform: scale(1.2);
+    transform: scale(1.05);
 }
