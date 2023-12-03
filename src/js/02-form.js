@@ -27,7 +27,6 @@ formMessage.value = formCurrentData('message');
 feedbackForm.addEventListener('input', evt => {
   if (localStorage.getItem(localStorageKey) == null) {
     let inputValues = {};
-    // inputValues = JSON.parse(localStorage.getItem(localStorageKey));
     inputValues[evt.target.name] = evt.target.value.trim();
     localStorage.setItem(localStorageKey, JSON.stringify(inputValues));
   } else {

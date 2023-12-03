@@ -35,6 +35,13 @@
     border: 1px solid #808080;
     outline: none;
     font-family: Montserrat;
+    transition: border 250ms ease-in-out;
+}
+
+.feedback-form label input:active,
+.feedback-form label input:focus,
+.feedback-form label input:hover {
+    border-color: black;
 }
 
 .feedback-form label textarea {
@@ -43,6 +50,13 @@
     border: 1px solid #808080;
     outline: none;
     font-family: Montserrat;
+    transition: border 250ms ease-in-out;
+}
+
+.feedback-form label textarea:hover,
+.feedback-form label textarea:focus,
+.feedback-form label textarea:active {
+    border-color: black;
 }
 
 .feedback-form button {
@@ -57,4 +71,10 @@
     background-color: #4E75FF;
     border: none;
     margin: 0 auto 0 0;
+    transition: transform 250ms ease-in-out;
+}
+
+.feedback-form button:hover,
+.feedback-form button:focus {
+    transform: scale(1.05);
 }
